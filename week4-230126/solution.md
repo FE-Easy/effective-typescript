@@ -3,6 +3,54 @@
 ## 14. 타입 연산과 제너릭 사용으로 반복 줄이기
 
 ## 15. 동적 데이터에 인덱스 시그니처 사용하기
+### 인덱스 시그니처(Index Signature)란?
+> 인덱스 시그니처(Index Signature)는 { [Key: T]: U } 형식으로 객체가 여러 Key를 가질 수 있으며, Key와 매핑되는 Value를 가지는 경우 사용합니다.
+### 문제) 인덱스 시그니처에 대한 아래 문제를 읽고 물음에 답해보세요 - 은빈
+### 1. `[property: string]: string`이 인덱스 시그니처이며, 다음 세 가지 의미를 담고 있습니다. 빈칸을 채워주세요.
+```tsx
+type Rocket = { [property: string]: string };
+const rocket: Rocket = {
+  name: "Falcon 9",
+  variant: "v1.0",
+  thrust: "4,940 kN",
+};
+```
+
+- 키의 이름: 키의 (위치)만 표시하는 용도입니다. (타입 체커)에서는 사용하지 않기 때문에 무시할 수 있는 참고 정보라고 생각해도 됩니다.
+- 키의 타입: string이나 number 또는 symbol의 조합이어야 하지만, 보통은 (string)을 사용합니다.
+- 값의 타입: 어떤 것이든 될 수 있습니다.
+
+### 2. 이렇게 타입 체크가 수행되면 네 가지 단점이 드러나게 됩니다. 단점 네가지를 얘기해주세요.
+
+1. 잘못된 키를 포함해도 인식할 수 없습니다. (name vs Name)
+2. 다른 타입의 값을 가질 수 없습니다. (number, boolean 등)
+3. 빈 객체 ({})도 할당될 수 있습니다.
+4. 자동완성 등의 언어서비스를 사용할 수 없습니다.
+
+### 3. 어떤 타입에 가능한 필드가 제안되어 있을 경우 인덱스 시그니처보다 정확한 타입을 사용해야합니다. 선택적 필드 또는 유니온 타입의 예시 타입을 작성해주세요.
+
+```tsx
+// Bad 너무 광범위
+interface Row1 {
+  [column: string]: number;
+}
+
+// Good 최선
+interface Row2 {
+  a: number;
+  b?: number;
+  c?: number;
+  d?: number;
+}
+
+// Good 가장 정확하지만 사용하기 번거로움
+type Row3 =
+  | { a: number }
+  | { a: number; b: number }
+  | { a: number; b: number; c: number }
+  | { a: number; b: number; c: number; d: number };
+```
+
 ## 16. number 인덱스 시그니처 보다는 Array, 튜플, ArrayLike를 사용하기
 ## 17. 변경 관련된 오류 방지를 위해 readonly 사용하기
 ### 문제) `readonly`에 대한 아래 문제를 읽고 물음에 답해보세요 - 종한
