@@ -4,7 +4,7 @@
 
 
 ## 주차별 상세 (최근순)
-### [week5-230202](https://github.com/FE-Easy/effective-typescript/tree/main/week4-230202)
+### [week5-230202](https://github.com/FE-Easy/effective-typescript/tree/main/week5-230202)
 - #18 매핑된 타입을 사용하여 값을 동기화하기
 - #19 추론 가능한 타입을 사용해 장황한 코드 방지하기
 - #20 다른 타입에는 다른 변수 사용하기
