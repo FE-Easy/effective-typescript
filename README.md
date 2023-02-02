@@ -1,9 +1,15 @@
-# effective-typescript
-> 이펙티브 타입스크립트를 읽는 스터디 레포
+<div align="center">
+  <img src="https://i.imgur.com/zjDnxFt.jpg" width="60%" align="center" alt="TypeScript!">
+</div>
 
-주차별로 폴더를 만들고 폴더 내에 `quiz`와 `solution`을 작성합니다
 
 ## 주차별 상세 (최근순)
+### [week5-230202](https://github.com/FE-Easy/effective-typescript/tree/main/week4-230202)
+- #18 매핑된 타입을 사용하여 값을 동기화하기
+- #19 추론 가능한 타입을 사용해 장황한 코드 방지하기
+- #20 다른 타입에는 다른 변수 사용하기
+- #21 타입 넓히기
+
 ### [week4-230126](https://github.com/FE-Easy/effective-typescript/tree/main/week4-230126)
 - #14 타입 연산과 제너릭 사용으로 반복 줄이기
 - #15 동적 데이터에 인덱스 시그니처 사용하기
