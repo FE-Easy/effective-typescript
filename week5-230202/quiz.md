@@ -61,3 +61,21 @@ const data2: ScatterProps =  {
 // 문제1. 아래 결과를 예측해보고 그 이유를 설명해주세요
 console.log(shouldUpdate(data1, data2)); 
 ```
+
+## #20 다른 타입에는 다른 변수 사용하기 - 은빈
+
+### 1. 아래 코드에서 오류가 발생하는 이유에 대해 설명해주세요.
+
+```tsx
+let id = "12-34-56"; // string
+fetchProduct(id);
+
+id = 123456;
+// ~~ '123456'형식은 'string' 형식에 할당할 수 없습니다.
+fetchProductBySerialNumber(id);
+// ~~ 'string' 형식의 인수는 'number' 형식의 매개변수에 할당될 수 없습니다.
+
+// let으로 해서 string
+```
+
+### 2. 다른 타입에는 별도의 변수를 사용할때의 장점을 얘기해주세요.
